@@ -31,8 +31,11 @@ jobs:
       run: mvn -B package --file pom.xml
     - name: Verify with Maven
       run: mvn --batch-mode --update-snapshots verify
-    - name: Verify with Maven
-      run: mvn --batch-mode deploy
+    - run: mkdir staging && cp target/*.war staging
+    - uses: actions/upload-artifact@v4
+      with:
+        name: Package
+        path: staging
     - name: REST API with curl
       run: |
         curl -X GET "http://localhost:8080"
