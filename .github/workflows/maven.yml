@@ -32,4 +32,4 @@ jobs:
     - name: Verify with Maven
       run: mvn --batch-mode --update-snapshots verify
     - name: Build and Run with Maven
-      run: mvnw spring-boot:run 
+      run: ./mvnw spring-boot:run 
