@@ -29,5 +29,11 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    - name: Verify with Maven
       run: mvn --batch-mode --update-snapshots verify
+<<<<<<< HEAD
       run: mvn spring-boot:run 
+=======
+    - name: Build and Run with Maven
+      run: ./mvnw spring-boot:run 
+>>>>>>> d929ddce838244c3baa54f3df2e45df43a9024e6
