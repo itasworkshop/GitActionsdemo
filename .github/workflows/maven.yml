@@ -32,7 +32,7 @@ jobs:
     - name: Verify with Maven
       run: mvn --batch-mode --update-snapshots verify
     - name: Verify with Maven
-      run: mvn spring-boot:run
+      run: mvn wrapper:wrapper
     - name: REST API with curl
       run: |
         curl -X GET "http://localhost:8080"
